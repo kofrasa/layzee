@@ -1,0 +1,53 @@
+{
+  "name": "layzee",
+  "version": "@VERSION",
+  "description": "A minimal lazy iterator implementation",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape tests.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kofrasa/layzee.git"
+  },
+  "keywords": [
+    "es6",
+    "lazy",
+    "functional",
+    "filter",
+    "generators",
+    "map",
+    "reduce",
+    "iterate",
+    "iterator",
+    "sequence"
+  ],
+  "author": "Francis Asante <kofrasa@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kofrasa/layzee/issues"
+  },
+  "homepage": "https://github.com/kofrasa/layzee#readme",
+  "files": [
+    "dist",
+    "index.js",
+    "LICENSE",
+    "README.md",
+    "CHANGELOG.md",
+    "VERSION"
+  ],
+  "devDependencies": {
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-istanbul": "4.1.4",
+    "babel-preset-env": "^1.6.0",
+    "codecov": "2.3.0",
+    "istanbul": "0.4.0",
+    "nyc": "^11.1.0",
+    "rollup": "^0.54.0",
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-commonjs": "^8.3.0",
+    "rollup-plugin-node-resolve": "^3.0.2",
+    "tape": ">=4.x.x",
+    "uglify-js": "3.3.9"
+  }
+}

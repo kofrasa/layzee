@@ -1,0 +1,3 @@
+// layzee.js @VERSION
+// Copyright (c) @YEAR Francis Asante
+// MIT
