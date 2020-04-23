@@ -188,9 +188,6 @@ class Iterator {
 
   /**
    * @param {*} source An iterable object or function.
-   *    Array - return one element per cycle
-   *    Object{next:Function} - call next() for the next value (this also handles generator functions)
-   *    Function - call to return the next value
    * @param {Function} fn An optional transformation function
    */
   constructor(source: Source) {
