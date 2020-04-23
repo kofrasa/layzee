@@ -3,8 +3,13 @@
   "version": "0.0.0",
   "description": "A minimal lazy iterator implementation",
   "main": "index.js",
+  "module": "index.js",
+  "typings": "index.d.ts",
   "scripts": {
-    "test": "tape tests.js"
+    "build": "tsc",
+    "docs": "typedoc && touch docs/.nojekyll",
+    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
+    "test": "npm run build && NODE_ENV=test nyc --reporter=lcov --reporter=text ./runtest.sh"
   },
   "repository": {
     "type": "git",
@@ -29,25 +34,19 @@
   },
   "homepage": "https://github.com/kofrasa/layzee#readme",
   "files": [
-    "dist",
     "index.js",
+    "index.d.ts",
     "LICENSE",
     "README.md",
-    "CHANGELOG.md",
-    "VERSION"
+    "CHANGELOG.md"
   ],
   "devDependencies": {
-    "babel-plugin-external-helpers": "^6.22.0",
-    "babel-plugin-istanbul": "4.1.4",
-    "babel-preset-env": "^1.6.0",
-    "codecov": ">=3.6.5",
-    "istanbul": "0.4.0",
-    "nyc": "^11.1.0",
-    "rollup": "^0.54.0",
-    "rollup-plugin-babel": "^3.0.3",
-    "rollup-plugin-commonjs": "^8.3.0",
-    "rollup-plugin-node-resolve": "^3.0.2",
-    "tape": ">=4.x.x",
-    "uglify-js": "3.3.9"
+    "esm": "3.2.25",
+    "codecov": "3.6.5",
+    "nyc": "15.0.1",
+    "perf_hooks": "0.0.1",
+    "tape": "4.13.2",
+    "typescript": "3.8.3",
+    "typedoc": "0.17.4"
   }
 }

@@ -1,7 +1,7 @@
-var Lazy = require('../dist/layzee')
-var test = require('tape')
+import Lazy from '../index.js'
+import test from 'tape'
 
-var DATA = [1,2,3,4,5,6,7,8,9]
+let DATA = [1,2,3,4,5,6,7,8,9]
 
 function newLazy() {
   return Lazy(DATA)
@@ -13,7 +13,7 @@ function isEven (o) {
 
 test('Iterator tests', function (t) {
 
-  var fixtures = [
+  let fixtures = [
     [ newLazy().map(n => n*3), [3, 6, 9, 12, 15, 18, 21, 24, 27], "can map" ],
     [ newLazy().filter(isEven), [2,4,6,8], "can filter" ],
     [ newLazy().drop(3), [4,5,6,7,8,9], "can skip with number" ],
@@ -39,16 +39,16 @@ test('Iterator tests', function (t) {
   // terminal method tests
   t.equal(newLazy().reduce((acc,n) => acc+n), 45, "can reduce")
 
-  var arr = []
+  let arr = []
   newLazy().each(o => arr.push(o%2))
   t.deepEqual(arr, [1,0,1,0,1,0,1,0,1], "can iterate with each")
 
-  var sample = newLazy().sample().value()
-  t.ok(sample.length > 0, "sample must be non-zero")
-  t.ok(sample.length < DATA.length, "sample must be less than DATA length")
+  let sample01 = newLazy().sample(0.9).value()
+  let sample02 = newLazy().sample(0.1).value()
+
+  t.ok(sample01.length > DATA.length / 2, "sample1 must be non-zero")
+  t.ok(sample02.length < DATA.length / 2, "sample2 must be non-zero")
   t.deepEqual(newLazy().size(), DATA.length, "can count sequence")
-  t.deepEqual(newLazy().max(), 9, "can find max value")
-  t.deepEqual(newLazy().min(), 1, "can find min value")
   t.deepEqual(newLazy().partition(isEven), [ [2,4,6,8], [1,3,5,7,9] ], 'can create partition')
   t.deepEqual(Lazy(['big', 'bad', 'wolf']).groupBy(o => o.length), { 3: ['big', 'bad'], 4: ['wolf'] }, "can groupBy")
 
