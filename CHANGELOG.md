@@ -5,7 +5,7 @@
 - Convert to typescript
 - Unexport `isIterable`
 - Remove `max` and `min`
-- Rename `one` to `first`
+- Rename `one()` to `first()`
 - Add docs
 
 ## 0.0.0 / 2018-01-31

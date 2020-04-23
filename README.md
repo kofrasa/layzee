@@ -12,7 +12,7 @@ A minimal lazy iterator implementation
 
 ```$ npm install layzee```
 
-[docs](kofrasa.net/layzee)
+[docs](https://kofrasa.net/layzee)
 
 # usage
 

@@ -1,6 +1,6 @@
 {
   "name": "layzee",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A minimal lazy iterator implementation",
   "main": "index.js",
   "module": "index.js",
@@ -9,7 +9,8 @@
     "build": "tsc",
     "docs": "typedoc && touch docs/.nojekyll",
     "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
-    "test": "npm run build && NODE_ENV=test nyc --reporter=lcov --reporter=text ./runtest.sh"
+    "test": "npm run build && NODE_ENV=test nyc --reporter=lcov --reporter=text ./runtest.sh",
+    "prepublishOnly": "npm run test"
   },
   "repository": {
     "type": "git",
@@ -27,7 +28,10 @@
     "iterator",
     "sequence"
   ],
-  "author": "Francis Asante <kofrasa@gmail.com>",
+  "author": {
+    "name": "Francis Asante",
+    "email": "kofrasa@gmail.com"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/kofrasa/layzee/issues"
