@@ -1,11 +1,11 @@
 
 // Generic callback
-interface Callback<T> {
+export interface Callback<T> {
   (...args: any): T
 }
 
 // Generic predicate
-interface Predicate<T> {
+export interface Predicate<T> {
   (...args: T[]): boolean
 }
 
@@ -13,10 +13,9 @@ interface Predicate<T> {
 type CompareResult = -1 | 0 | 1
 
 // Generic comparator callback
-interface Comparator<T> {
+export interface Comparator<T> {
   (left: T, right: T): CompareResult
 }
-
 
 interface Iteratee {
   action: Action
@@ -38,13 +37,13 @@ interface Value {
   done: boolean
 }
 
-type Source = Generator<any> | Callback<any> | Array<any>
+export type Source = Generator<any> | Callback<any> | Array<any>
 
 /**
  * A wrapper for creating an iterator from an array, generator, or generator function
  * @param {*} source An iterable source (Array, Function, Generator, or Iterator)
  */
-function Lazy(source: Source): Iterator {
+export function Lazy(source: Source): Iterator {
   return (source instanceof Iterator) ? source : new Iterator(source)
 }
 
@@ -55,7 +54,7 @@ function Lazy(source: Source): Iterator {
  * @param {Number} end
  * @param {Number} step
  */
-function range(begin: number, end?: number, step?: number) {
+export function range(begin: number, end?: number, step?: number) {
   if (end === undefined) {
     end = begin
     begin = 0
@@ -176,9 +175,9 @@ function createCallback(nextFn: Callback<any>, iteratees: Iteratee[], buffer: an
 }
 
 /**
- * A lazy collection iterator yields a single value at time upon request
+ * An iterator encapsulates a lazy sequence
  */
-class Iterator {
+export class Iterator {
 
   private __iteratees: Iteratee[] // lazy function chain
   private __first: boolean // flag whether to return a single value
