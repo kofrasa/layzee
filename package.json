@@ -51,6 +51,6 @@
     "perf_hooks": "0.0.1",
     "tape": "4.14.0",
     "typescript": "3.8.3",
-    "typedoc": "0.22.2"
+    "typedoc": "0.22.3"
   }
 }
