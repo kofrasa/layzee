@@ -50,7 +50,7 @@
     "nyc": "15.1.0",
     "perf_hooks": "0.0.1",
     "tape": "4.16.2",
-    "typescript": "3.8.3",
+    "typescript": "5.0.2",
     "typedoc": "0.23.27"
   }
 }
